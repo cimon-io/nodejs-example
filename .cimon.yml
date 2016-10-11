@@ -17,13 +17,13 @@ default: &default
     - PORT=80
 
 staging_0_12:
-  <<: *server
+  <<: *default
   service: nodejs_0_12_2
 
 staging_6_7:
-  <<: *server
+  <<: *default
   service: nodejs_6_7
 
 staging_4_6:
-  <<: *server
+  <<: *default
   service: nodejs_4_6
