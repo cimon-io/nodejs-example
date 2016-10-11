@@ -1,0 +1,29 @@
+services:
+  nodejs_0_12_2:
+    from: 'node:0.12.2'
+  nodejs_6_7:
+    from: 'node:6.7'
+  nodejs_4_6:
+    from: 'node:4.6'
+
+default: &default
+  prepare:
+    - npm install
+  folder: /app
+  port: 80
+  cmd: npm start
+  env:
+    - NODE_ENV=production
+    - PORT=80
+
+staging_0_12:
+  <<: *server
+  service: nodejs_0_12_2
+
+staging_6_7:
+  <<: *server
+  service: nodejs_6_7
+
+staging_4_6:
+  <<: *server
+  service: nodejs_4_6
