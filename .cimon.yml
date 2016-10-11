@@ -1,10 +1,16 @@
 services:
   nodejs_0_12_2:
     from: 'node:0.12.2'
+    cache:
+     - /app/node_modules
   nodejs_6_7:
     from: 'node:6.7'
+    cache:
+     - /app/node_modules
   nodejs_4_6:
     from: 'node:4.6'
+    cache:
+     - /app/node_modules
 
 default: &default
   prepare:
