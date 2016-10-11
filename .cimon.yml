@@ -9,6 +9,7 @@ services:
 default: &default
   prepare:
     - npm install
+    - echo "this command will be run each time for each victim"
   folder: /app
   port: 80
   cmd: npm start
