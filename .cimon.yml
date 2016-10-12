@@ -7,10 +7,6 @@ services:
     from: 'node:6.7'
     cache:
      - /app/node_modules
-  nodejs_4_6:
-    from: 'node:4.6'
-    cache:
-     - /app/node_modules
 
 default: &default
   prepare:
@@ -30,7 +26,3 @@ staging_0_12:
 staging_6_7:
   <<: *default
   service: nodejs_6_7
-
-staging_4_6:
-  <<: *default
-  service: nodejs_4_6
