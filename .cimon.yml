@@ -1,0 +1,29 @@
+services:
+  nodejs_0_12_2:
+    from: 'node:0.12.2'
+    cache:
+     - /app/node_modules
+  nodejs_6_7:
+    from: 'node:6.7'
+    cache:
+     - /app/node_modules
+
+default: &default
+  prepare:
+    - npm install
+    - echo "this command will be run each time for each victim."
+    - echo "this command will be run each time for each victim 2."
+  folder: /app
+  port: 80
+  cmd: npm start
+  env:
+    - NODE_ENV=production
+    - PORT=80
+
+staging_0_12:
+  <<: *default
+  service: nodejs_0_12_2
+
+staging_6_7:
+  <<: *default
+  service: nodejs_6_7
