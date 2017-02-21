@@ -11,8 +11,8 @@ services:
 default: &default
   prepare:
     - npm install
-    - echo "this command will be run each time for each victim"
-    - echo "this command will be run each time for each victim 2"
+    - echo "this command will be run each time for each victim."
+    - echo "this command will be run each time for each victim 2."
   folder: /app
   port: 80
   cmd: npm start
